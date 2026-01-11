@@ -26,6 +26,44 @@ body {
     padding: 50px;
     background-color: #111;
 }
+/* =========================
+   PÁGINAS INDIVIDUALES
+========================= */
+.single-section {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #151515;
+    border-radius: 14px;
+}
+
+.single-section h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.service-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.service-list li {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+/* Botón volver */
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
 
 .header-text {
     max-width: 60%;
