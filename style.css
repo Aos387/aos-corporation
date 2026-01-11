@@ -72,19 +72,22 @@ body {
     margin-bottom: 25px;
 }
 
-/* Hover iluminación */
-.section:hover {
-    background-color: #ffffff;
-    color: #000000;
-    transform: translateY(-6px);
+/* Hover SOLO en dispositivos con ratón */
+@media (hover: hover) and (pointer: fine) {
+    .section:hover {
+        background-color: #ffffff;
+        color: #000000;
+        transform: translateY(-6px);
+    }
+
+    .section:hover p,
+    .section:hover h2,
+    .section:hover a,
+    .section:hover strong {
+        color: #000000;
+    }
 }
 
-.section:hover p,
-.section:hover h2,
-.section:hover a,
-.section:hover strong {
-    color: #000000;
-}
 
 /* =========================
    BLOQUES INTERNOS
