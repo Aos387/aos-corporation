@@ -1,5 +1,5 @@
 /* =========================
-   RESET BÁSICO
+   RESET
 ========================= */
 * {
     margin: 0;
@@ -47,46 +47,7 @@ body {
 }
 
 /* =========================
-   PÁGINAS INDIVIDUALES
-========================= */
-.single-section {
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 40px;
-    background-color: #151515;
-    border-radius: 14px;
-}
-
-.single-section h2 {
-    margin-bottom: 20px;
-    font-size: 26px;
-}
-
-.service-list {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.service-list li {
-    margin: 12px 0;
-    font-size: 18px;
-}
-
-/* Botón volver */
-.back-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #00aaff;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.back-link:hover {
-    color: #ffffff;
-}
-
-/* =========================
-   CONTENIDO PRINCIPAL
+   MAIN CONTENT
 ========================= */
 .main-content {
     display: flex;
@@ -96,30 +57,22 @@ body {
 }
 
 /* =========================
-   SECCIONES GENERALES
+   SECTIONS
 ========================= */
 .section {
     width: 45%;
     padding: 35px;
-    border-radius: 14px;
+    border-radius: 16px;
     background-color: #151515;
     transition: all 0.35s ease;
 }
 
 .section h2 {
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
-.section img {
-    width: 100%;
-    margin: 20px 0;
-    border-radius: 12px;
-}
-
-/* =========================
-   EFECTO HOVER (ILUMINACIÓN)
-========================= */
+/* Hover iluminación */
 .section:hover {
     background-color: #ffffff;
     color: #000000;
@@ -127,7 +80,9 @@ body {
 }
 
 .section:hover p,
-.section:hover h2 {
+.section:hover h2,
+.section:hover a,
+.section:hover strong {
     color: #000000;
 }
 
@@ -135,33 +90,21 @@ body {
    BLOQUES INTERNOS
 ========================= */
 .section-block {
-    margin: 18px 0;
-    padding: 12px 15px;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+    margin-bottom: 22px;
 }
 
-.section:hover .section-block {
-    background-color: #f2f2f2;
-}
-
+.section-block strong,
 .section-block a {
-    display: block;
+    font-size: 17px;
     font-weight: bold;
-    text-decoration: none;
     color: #ffffff;
-    margin-bottom: 6px;
+    text-decoration: none;
 }
 
 .section-block p {
-    font-size: 0.9rem;
+    margin-top: 6px;
+    font-size: 14px;
     opacity: 0.85;
-}
-
-/* Texto oscuro en hover */
-.section:hover .section-block a,
-.section:hover .section-block p {
-    color: #000000;
 }
 
 /* =========================
@@ -177,33 +120,38 @@ body {
 ========================= */
 .aos-techs {
     background-color: #151515;
-    border: none;
 }
 
 /* =========================
-   FOOTER (ARREGLADO)
+   FOOTER (CORRECTO)
 ========================= */
 .footer {
-    display: flex;
-    flex-direction: column;   /* 🔴 texto arriba, redes abajo */
-    align-items: center;      /* 🔴 centrado */
-    padding: 40px 30px;
+    width: 100%;
     background-color: #111;
-    margin-top: 60px;
+    padding: 40px 20px;
+    margin-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer p {
-    margin-bottom: 20px;
     color: #cccccc;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 /* =========================
-   REDES SOCIALES (ABAJO DEL TODO)
+   REDES SOCIALES
 ========================= */
 .socials {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .socials a {
