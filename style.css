@@ -1,131 +1,136 @@
-/* RESET BÁSICO */
+/* ======================================================
+   RESET GENERAL
+   Elimina márgenes raros del navegador y asegura tamaños
+====================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+/* ======================================================
+   BODY GENERAL
+====================================================== */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #0b0b0b;
+    background-color: #0b0b0b;
     color: #ffffff;
     line-height: 1.6;
 }
 
-/* CONTENEDOR GENERAL */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 0;
+/* ======================================================
+   HEADER
+====================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 8%;
+    background: #111;
+    border-bottom: 1px solid #222;
 }
 
-/* TÍTULOS */
-h1, h2, h3 {
-    margin-bottom: 15px;
+/* Texto del header */
+.header-text {
+    max-width: 600px;
 }
 
-/* LINKS */
-a {
-    color: inherit;
-    text-decoration: none;
+/* Logo */
+.header-image img {
+    max-width: 160px;
 }
 
-/* ===== AOS TECHS ===== */
-.aos-techs {
-    margin-top: 40px;
+/* ======================================================
+   CONTENIDO PRINCIPAL
+====================================================== */
+.main-content {
+    padding: 60px 8%;
 }
 
-/* CADA APARTADO */
-.tech-item {
-    padding: 25px;
-    margin-bottom: 25px;
+/* ======================================================
+   SECCIONES
+====================================================== */
+.section {
+    margin-bottom: 60px; /* separación ENTRE secciones */
+}
+
+/* ======================================================
+   BLOQUES INTERNOS
+====================================================== */
+.section-block {
+    background: #111;
     border: 1px solid #222;
     border-radius: 10px;
-    background: #111;
+    padding: 20px;
+    margin-bottom: 20px; /* separación ENTRE bloques */
     transition: all 0.3s ease;
 }
 
-/* SEPARACIÓN VISUAL */
-.tech-item:not(:last-child) {
-    border-bottom: 2px solid #1c1c1c;
-}
-
-/* HOVER DIFERENTE EN CADA UNO */
-.tech-item:nth-child(1):hover {
-    background: #fff;
-    color: #000;
-}
-
-.tech-item:nth-child(2):hover {
-    background: #f5f5f5;
-    color: #000;
-}
-
-.tech-item:nth-child(3):hover {
-    background: #eaeaea;
-    color: #000;
-}
-
-/* APARTADO DESTACADO */
-.tech-main {
-    background: #151515;
-    border: 2px solid #444;
-}
-
-.tech-main:hover {
+/* ======================================================
+   EFECTO HOVER GENERAL
+====================================================== */
+.section-block:hover {
     background: #ffffff;
-    color: #000;
+    color: #000000;
 }
 
-/* BOTÓN */
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 18px;
-    border: 1px solid #fff;
-    border-radius: 6px;
-    transition: 0.3s;
+/* ======================================================
+   AOS TECHS – BLOQUE DESTACADO
+====================================================== */
+.featured-tech {
+    border: 2px solid #444;
+    background: #151515;
 }
 
-.btn:hover {
-    background: #000;
-    color: #fff;
+/* Hover más suave pero destacado */
+.featured-tech:hover {
+    background: #f5f5f5;
 }
 
-/* ===== SUBPÁGINAS ===== */
-.section {
-    margin-bottom: 40px;
-    padding: 25px;
+/* ======================================================
+   LINKS
+====================================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer {
+    padding: 30px 8%;
     background: #111;
-    border-radius: 10px;
-    border: 1px solid #222;
+    border-top: 1px solid #222;
+    text-align: center;
 }
 
-/* VOLVER */
-.back {
-    display: inline-block;
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
+.footer .socials a {
+    margin: 0 10px;
 }
 
-.back:hover {
-    opacity: 1;
-}
-
-/* ===== RESPONSIVE MÓVIL ===== */
+/* ======================================================
+   RESPONSIVE MÓVIL
+   AQUÍ ESTABA EL PROBLEMA PRINCIPAL
+====================================================== */
 @media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .main-content {
+        padding: 40px 6%;
+    }
+
+    .section-block {
+        padding: 18px;
+    }
+
     h1 {
         font-size: 26px;
-    }
-
-    .tech-item {
-        padding: 20px;
-    }
-
-    .container {
-        width: 95%;
     }
 }
