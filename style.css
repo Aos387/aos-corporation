@@ -161,3 +161,27 @@ body {
 .socials a:hover {
     color: #ffffff;
 }
+
+/* =========================
+   BLOQUE DESTACADO AOS TECHS
+========================= */
+.featured-tech {
+    border: 1px solid #00aaff; /* Borde azul sutil */
+    padding: 18px;
+    border-radius: 12px;
+    background: linear-gradient(
+        145deg,
+        rgba(0,170,255,0.08),
+        rgba(0,170,255,0.02)
+    );
+}
+
+.featured-tech a {
+    font-size: 19px; /* Un poco más grande */
+    letter-spacing: 1px;
+}
+
+.featured-tech p {
+    font-size: 14px;
+    opacity: 0.95;
+}
