@@ -1,136 +1,229 @@
-/* ======================================================
-   RESET GENERAL
-   Elimina márgenes raros del navegador y asegura tamaños
-====================================================== */
+/* =====================================================
+   RESET GLOBAL
+   Quitamos estilos por defecto del navegador
+===================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Elimina márgenes automáticos */
+    padding: 0; /* Elimina rellenos automáticos */
+    box-sizing: border-box; /* Tamaños más predecibles */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente global */
 }
 
-/* ======================================================
-   BODY GENERAL
-====================================================== */
+/* =====================================================
+   BODY
+===================================================== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0b0b0b;
-    color: #ffffff;
-    line-height: 1.6;
+    background-color: #0e0e0e; /* Fondo negro/gris oscuro */
+    color: #ffffff; /* Texto blanco */
 }
 
-/* ======================================================
+/* =====================================================
    HEADER
-====================================================== */
+===================================================== */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 8%;
-    background: #111;
-    border-bottom: 1px solid #222;
+    display: flex; /* Coloca texto e imagen en fila */
+    justify-content: space-between; /* Separación horizontal */
+    align-items: center; /* Centrado vertical */
+    padding: 50px;
+    background-color: #111;
+    gap: 40px; /* Separación entre texto y logo */
 }
 
-/* Texto del header */
 .header-text {
-    max-width: 600px;
+    max-width: 60%; /* Limita el ancho del texto */
 }
 
-/* Logo */
+.header-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.header-text p {
+    font-size: 18px;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
 .header-image img {
-    max-width: 160px;
+    width: 200px;
 }
 
-/* ======================================================
-   CONTENIDO PRINCIPAL
-====================================================== */
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 .main-content {
-    padding: 60px 8%;
+    display: flex; /* Secciones en horizontal */
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre AOS Meca y AOS Techs */
+    padding: 60px;
+    flex-wrap: wrap; /* En móvil permite bajar */
 }
 
-/* ======================================================
-   SECCIONES
-====================================================== */
+/* =====================================================
+   SECTIONS (CAJAS GRANDES)
+===================================================== */
 .section {
-    margin-bottom: 60px; /* separación ENTRE secciones */
+    width: 45%;
+    padding: 35px;
+    border-radius: 16px;
+    background-color: #151515;
+    transition: all 0.35s ease;
 }
 
-/* ======================================================
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* =====================================================
    BLOQUES INTERNOS
-====================================================== */
+===================================================== */
 .section-block {
-    background: #111;
-    border: 1px solid #222;
+    margin-bottom: 22px; /* Separación ENTRE TODOS */
+    padding: 14px;
     border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px; /* separación ENTRE bloques */
     transition: all 0.3s ease;
 }
 
-/* ======================================================
-   EFECTO HOVER GENERAL
-====================================================== */
-.section-block:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-/* ======================================================
-   AOS TECHS – BLOQUE DESTACADO
-====================================================== */
-.featured-tech {
-    border: 2px solid #444;
-    background: #151515;
-}
-
-/* Hover más suave pero destacado */
-.featured-tech:hover {
-    background: #f5f5f5;
-}
-
-/* ======================================================
-   LINKS
-====================================================== */
-a {
-    color: inherit;
-    text-decoration: none;
+.section-block strong,
+.section-block a {
+    font-size: 17px;
     font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
 }
 
-/* ======================================================
+.section-block p {
+    margin-top: 6px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =====================================================
+   AOS MECA
+===================================================== */
+.aos-meca {
+    background-color: #1a1a1a;
+    min-height: 520px;
+}
+
+/* =====================================================
+   AOS TECHS
+===================================================== */
+.aos-techs {
+    background-color: #151515;
+}
+
+/* =====================================================
+   BLOQUE DESTACADO (CRAKING)
+===================================================== */
+.featured-tech {
+    border: 1px solid #00aaff;
+    background: linear-gradient(
+        145deg,
+        rgba(0,170,255,0.12),
+        rgba(0,170,255,0.03)
+    );
+}
+
+.featured-tech a {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   EFECTOS HOVER SOLO EN PC
+===================================================== */
+@media (hover: hover) and (pointer: fine) {
+
+    /* Caja grande */
+    .section:hover {
+        background-color: #ffffff;
+        color: #000000;
+        transform: translateY(-6px);
+    }
+
+    .section:hover h2,
+    .section:hover p,
+    .section:hover a,
+    .section:hover strong {
+        color: #000000;
+    }
+
+    /* Iluminaciones distintas en AOS TECHS */
+    .tech-1:hover { background-color: rgba(255,255,255,0.15); }
+    .tech-2:hover { background-color: rgba(255,255,255,0.20); }
+    .tech-3:hover { background-color: rgba(255,255,255,0.25); }
+    .tech-4:hover { background-color: rgba(255,255,255,0.18); }
+    .tech-5:hover { background-color: rgba(255,255,255,0.22); }
+
+    .section-block:hover a,
+    .section-block:hover strong,
+    .section-block:hover p {
+        color: #ffffff;
+    }
+}
+
+/* =====================================================
    FOOTER
-====================================================== */
+===================================================== */
 .footer {
-    padding: 30px 8%;
-    background: #111;
-    border-top: 1px solid #222;
+    width: 100%;
+    background-color: #111;
+    padding: 40px 20px;
+    margin-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    color: #cccccc;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.footer .socials a {
-    margin: 0 10px;
+/* =====================================================
+   REDES SOCIALES
+===================================================== */
+.socials {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-/* ======================================================
-   RESPONSIVE MÓVIL
-   AQUÍ ESTABA EL PROBLEMA PRINCIPAL
-====================================================== */
-@media (max-width: 768px) {
+.socials a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #ffffff;
+}
+
+/* =====================================================
+   RESPONSIVE (MÓVIL)
+===================================================== */
+@media (max-width: 900px) {
 
     .header {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+    }
+
+    .header-text {
+        max-width: 100%;
     }
 
     .main-content {
-        padding: 40px 6%;
+        flex-direction: column;
+        padding: 30px;
     }
 
-    .section-block {
-        padding: 18px;
-    }
-
-    h1 {
-        font-size: 26px;
+    .section {
+        width: 100%;
     }
 }
