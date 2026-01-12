@@ -1,187 +1,114 @@
-/* =========================
-   RESET
-========================= */
-* {
-    margin: 0; /* Elimina márgenes por defecto */
-    padding: 0; /* Elimina rellenos por defecto */
-    box-sizing: border-box; /* Incluye bordes en el tamaño */
-    font-family: Arial, Helvetica, sans-serif; /* Fuente global */
-}
+<!DOCTYPE html> <!-- HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Soporte completo de texto -->
+    <title>CRAKING BY AOS | AOS Corporation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* =========================
-   BODY
-========================= */
-body {
-    background-color: #0e0e0e; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco */
-}
+<body>
 
-/* =========================
-   HEADER
-========================= */
-.header {
-    display: flex; /* Coloca elementos en fila */
-    justify-content: space-between; /* Separación horizontal */
-    align-items: center; /* Alineación vertical */
-    padding: 50px;
-    background-color: #111;
-}
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="header-text">
+        <h1>CRAKING BY AOS</h1>
+        <p>
+            División especializada en hacking ético, análisis de seguridad,
+            ingeniería social y recursos técnicos avanzados.
+        </p>
+    </div>
+</header>
 
-.header-text {
-    max-width: 60%; /* Limita ancho del texto */
-}
+<!-- ================= CONTENIDO ================= -->
+<main class="main-content">
 
-.header-text h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
+<!-- ===== ISOs ===== -->
+<section class="section">
+    <h2>ISOs</h2>
 
-.header-text p {
-    font-size: 18px;
-    color: #cccccc;
-    line-height: 1.5;
-}
+    <div class="section-block">
+        <strong>Distribuciones de seguridad</strong>
+        <p>
+            ISOs enfocadas en auditoría, pentesting, forense digital
+            y entornos de laboratorio.
+        </p>
+    </div>
 
-.header-image img {
-    width: 200px;
-}
+    <div class="section-block">
+        <strong>Entornos de pruebas</strong>
+        <p>
+            Sistemas preparados para análisis y simulación real.
+        </p>
+    </div>
+</section>
 
-/* =========================
-   MAIN CONTENT
-========================= */
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 60px;
-}
+<!-- ===== PDFs ===== -->
+<section class="section">
+    <h2>PDFs</h2>
 
-/* =========================
-   SECTIONS
-========================= */
-.section {
-    width: 45%;
-    padding: 35px;
-    border-radius: 16px;
-    background-color: #151515;
-    transition: all 0.35s ease; /* Animación suave */
-}
+    <div class="section-block">
+        <strong>Documentación técnica</strong>
+        <p>
+            Manuales, guías y whitepapers de ciberseguridad.
+        </p>
+    </div>
 
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 25px;
-}
+    <div class="section-block">
+        <strong>Formación avanzada</strong>
+        <p>
+            Material educativo y profesional.
+        </p>
+    </div>
+</section>
 
-/* Hover solo en PC (ratón) */
-@media (hover: hover) and (pointer: fine) {
-    .section:hover {
-        background-color: #ffffff;
-        color: #000000;
-        transform: translateY(-6px);
-    }
+<!-- ===== PROGRAMS ===== -->
+<section class="section">
+    <h2>Programs</h2>
 
-    .section:hover p,
-    .section:hover h2,
-    .section:hover a,
-    .section:hover strong {
-        color: #000000;
-    }
-}
+    <div class="section-block">
+        <strong>Herramientas y repositorios</strong>
+        <p>
+            Software y utilidades para análisis y testing ético.
+        </p>
+    </div>
 
-/* =========================
-   BLOQUES INTERNOS
-========================= */
-.section-block {
-    margin-bottom: 22px;
-}
+    <div class="section-block">
+        <strong>Laboratorios</strong>
+        <p>
+            Programas para entornos controlados.
+        </p>
+    </div>
+</section>
 
-.section-block strong,
-.section-block a {
-    font-size: 17px;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-}
+<!-- ===== CODE ===== -->
+<section class="section">
+    <h2>CODE &lt;&gt;</h2>
 
-.section-block p {
-    margin-top: 6px;
-    font-size: 14px;
-    opacity: 0.85;
-}
+    <div class="section-block">
+        <strong>Scripts</strong>
+        <p>
+            Código educativo para automatización y análisis.
+        </p>
+    </div>
 
-/* =========================
-   AOS MECA
-========================= */
-.aos-meca {
-    background-color: #1a1a1a;
-    min-height: 520px;
-}
+    <div class="section-block">
+        <strong>Ingeniería inversa</strong>
+        <p>
+            Ejemplos prácticos con fines legales y éticos.
+        </p>
+    </div>
+</section>
 
-/* =========================
-   AOS TECHS
-========================= */
-.aos-techs {
-    background-color: #151515;
-}
+</main>
 
-/* =========================
-   FOOTER
-========================= */
-.footer {
-    width: 100%;
-    background-color: #111;
-    padding: 40px 20px;
-    margin-top: 80px;
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>
+        ⚠️ Todo el contenido es educativo, ético y legal.
+    </p>
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    <a href="index.html">⬅ Volver a inicio</a>
+</footer>
 
-.footer p {
-    color: #cccccc;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   REDES SOCIALES
-========================= */
-.socials {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.socials a {
-    color: #00aaff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.socials a:hover {
-    color: #ffffff;
-}
-
-/* =========================
-   BLOQUE DESTACADO AOS TECHS
-========================= */
-.featured-tech {
-    border: 1px solid #00aaff; /* Borde azul sutil */
-    padding: 18px;
-    border-radius: 12px;
-    background: linear-gradient(
-        145deg,
-        rgba(0,170,255,0.08),
-        rgba(0,170,255,0.02)
-    );
-}
-
-.featured-tech a {
-    font-size: 19px; /* Un poco más grande */
-    letter-spacing: 1px;
-}
-
-.featured-tech p {
-    font-size: 14px;
-    opacity: 0.95;
-}
+</body> <!-- ❗ ESTE CIERRE FALTABA -->
+</html> <!-- ❗ ESTE CIERRE FALTABA -->
