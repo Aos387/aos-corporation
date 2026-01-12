@@ -68,6 +68,8 @@ body {
     background-color: #151515;
 }
 
+/* ❌ QUITAMOS HOVER GLOBAL DE SECTION
+   para evitar solapes de texto */
 .section h2 {
     font-size: 28px;
     margin-bottom: 25px;
@@ -84,4 +86,145 @@ body {
 }
 
 /* El enlace ocupa TODO el bloque */
-.section-block
+.section-block a {
+    display: block; /* 🔴 hace clicable todo el bloque */
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Texto secundario */
+.section-block p,
+.section-block strong {
+    margin-top: 6px;
+    font-size: 14px;
+    opacity: 0.85;
+    color: #ffffff;
+}
+
+/* =====================================================
+   AOS MECA (RESTABLECIDA)
+===================================================== */
+.aos-meca {
+    background-color: #1a1a1a;
+    min-height: 520px;
+}
+
+/* ❌ SIN HOVERS EN AOS MECA */
+.aos-meca .section-block:hover {
+    background: none;
+}
+
+/* =====================================================
+   AOS TECHS
+===================================================== */
+.aos-techs {
+    background-color: #151515;
+}
+
+/* =====================================================
+   BLOQUE DESTACADO
+===================================================== */
+.featured-tech {
+    border: 1px solid #00aaff;
+    background: linear-gradient(
+        145deg,
+        rgba(0,170,255,0.12),
+        rgba(0,170,255,0.03)
+    );
+}
+
+.featured-tech a {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   HOVER SOLO EN LOS BLOQUES DE AOS TECHS
+===================================================== */
+@media (hover: hover) and (pointer: fine) {
+
+    /* Hover base: aclarado suave */
+    .aos-techs .section-block:hover {
+        background-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Texto a NEGRO (clave para que no se solape) */
+    .aos-techs .section-block:hover a,
+    .aos-techs .section-block:hover p,
+    .aos-techs .section-block:hover strong {
+        color: #000000;
+        opacity: 1;
+    }
+
+    /* Variaciones sutiles por bloque */
+    .tech-1:hover { background-color: #f2f2f2; }
+    .tech-2:hover { background-color: #ededed; }
+    .tech-3:hover { background-color: #e8e8e8; }
+    .tech-4:hover { background-color: #f5f5f5; }
+    .tech-5:hover { background-color: #eeeeee; }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+    width: 100%;
+    background-color: #111;
+    padding: 40px 20px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    color: #cccccc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* =====================================================
+   REDES SOCIALES
+===================================================== */
+.socials {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.socials a:hover {
+    color: #ffffff;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 900px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        max-width: 100%;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .section {
+        width: 100%;
+    }
+}
