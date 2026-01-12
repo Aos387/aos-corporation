@@ -1,28 +1,35 @@
-/* =========== RESET GLOBAL ============ */
+/* =========================
+   RESET GLOBAL
+========================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif; /* Fuente estándar */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina rellenos por defecto */
+    box-sizing: border-box; /* Incluye bordes y padding en el tamaño total */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente global */
 }
 
-/* =========== BODY ============ */
+/* =========================
+   BODY
+========================= */
 body {
     background-color: #0e0e0e; /* Fondo oscuro */
     color: #ffffff; /* Texto blanco por defecto */
+    line-height: 1.5; /* Mejor lectura */
 }
 
-/* =========== HEADER ============ */
+/* =========================
+   HEADER
+========================= */
 .header {
-    display: flex; /* Logo y texto en fila */
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Elementos en fila */
+    justify-content: space-between; /* Separación horizontal */
+    align-items: center; /* Alineación vertical */
     padding: 50px;
-    background-color: #111; /* Cabecera gris muy oscuro */
+    background-color: #111; /* Fondo cabecera */
 }
 
 .header-text {
-    max-width: 60%;
+    max-width: 60%; /* Limita ancho del texto */
 }
 
 .header-text h1 {
@@ -32,117 +39,148 @@ body {
 
 .header-text p {
     font-size: 18px;
-    opacity: .85;
-    line-height: 1.5;
+    color: #cccccc;
 }
 
 .header-image img {
-    width: 200px; /* Tamaño del logo */
+    width: 200px; /* Logo */
 }
 
-/* =========== CONTENIDO PRINCIPAL ============ */
+/* =========================
+   MAIN CONTENT
+========================= */
 .main-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Ahora las secciones apilan en vertical para móvil y PC */
     gap: 40px;
-    padding: 60px;
-    flex-wrap: wrap; /* Permite responsivo */
+    padding: 40px; /* Espacio interior */
 }
 
-/* =========== SECCIONES ============ */
+/* =========================
+   SECCIONES GENERALES
+========================= */
 .section {
-    width: 45%;
-    padding: 35px;
-    background-color: #151515;
     border-radius: 16px;
+    padding: 30px;
+    background-color: #151515; /* Fondo de sección */
+    transition: all 0.35s ease; /* Transiciones suaves */
 }
 
-/* =========== BLOQUES (USADOS EN TODAS LAS PÁGINAS) ============ */
+/* Título de cada sección */
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
 
-/* Estilo base para todos los bloques que serán clicables */
+/* =========================
+   BLOQUES (TARJETAS) UNIFICADOS
+========================= */
 .block {
-    background-color: #1a1a1a;
-    border: 1px solid #222;
+    background-color: #1a1a1a; /* Fondo inicial */
+    border: 1px solid #222; /* Borde suave */
     border-radius: 12px;
     padding: 18px;
     margin-bottom: 20px;
-    transition: all 0.35s ease; /* Animación suave */
-    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease; /* Solo color y fondo en hover */
+    cursor: pointer; /* Mano al pasar ratón */
 }
 
-/* Asegura que el enlace ocupe TODO el bloque */
+/* Si hay link dentro del bloque, ocupa todo el bloque */
 .block a {
-    display: block; /* Hace la caja entera clickable */
-    color: inherit; /* Hereda color de texto */
-    text-decoration: none; /* Quita subrayado */
+    display: block;
+    color: inherit; /* Hereda color del bloque */
+    text-decoration: none; /* Sin subrayado */
 }
 
-/* =========== HOVER LIMPIO SIN SOLAPAR ============ */
+/* Hover para todos los bloques */
 @media (hover: hover) and (pointer: fine) {
-
-    /* Hover para TODOS los bloques clicables */
     .block:hover {
-        background-color: #ffffff; /* Fondo claro */
+        background-color: #ffffff; /* Fondo claro al pasar ratón */
     }
-
-    /* Letras en negro claro cuando hay hover */
-    .block:hover h2,
+    .block:hover strong,
     .block:hover p,
     .block:hover a {
-        color: #000000 !important; /* Fuerza a negro */
+        color: #000000; /* Texto negro al pasar ratón */
     }
 }
 
-/* =========== AOS MECA (extra ignorar hover aquí si quieres) ============ */
-.aos-meca {
-    background-color: #1a1a1a;
-    min-height: 520px;
+/* =========================
+   BLOQUE DESTACADO (AOS TECHS)
+========================= */
+.featured {
+    border: 1px solid #00aaff; /* Borde azul */
+    background: linear-gradient(
+        145deg,
+        rgba(0,170,255,0.08),
+        rgba(0,170,255,0.02)
+    ); /* Fondo con degradado sutil */
 }
 
-/* =========== FOOTER ============ */
+.featured a h3 {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 .footer {
     width: 100%;
     background-color: #111;
     padding: 40px 20px;
     margin-top: 80px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .footer p {
     color: #cccccc;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.footer .socials a {
-    margin: 0 12px;
+/* =========================
+   REDES SOCIALES
+========================= */
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.socials a {
     color: #00aaff;
-    font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
-.footer .socials a:hover {
+.socials a:hover {
     color: #ffffff;
 }
 
-/* =========== RESPONSIVE (MÓVIL) ============ */
+/* =========================
+   RESPONSIVE (MÓVIL)
+========================= */
 @media (max-width: 900px) {
-
     .header {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+    }
+
+    .header-text {
+        max-width: 100%;
     }
 
     .main-content {
-        flex-direction: column;
-        padding: 30px;
+        padding: 20px;
+        gap: 25px;
     }
 
     .section {
-        width: 100%;
+        padding: 20px;
     }
 }
