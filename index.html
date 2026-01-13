@@ -1,111 +1,116 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declara que usamos HTML5 -->
+<html lang="es"> <!-- Idioma principal del documento: español -->
+
 <head>
-    <!-- Codificación para permitir ñ, tildes, símbolos -->
+    <!-- Codificación de caracteres UTF-8 para soportar acentos, ñ y símbolos -->
     <meta charset="UTF-8">
 
-    <!-- Título que aparece en la pestaña -->
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>AOS Corporation</title>
 
-    <!-- Enlace al archivo de estilos (MUY IMPORTANTE que esté bien escrito) -->
+    <!-- Enlace al archivo CSS principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body> <!-- Todo lo visible de la web va dentro del body -->
 
 <!-- ================= HEADER ================= -->
-<header class="header">
+<header class="header"> <!-- Cabecera principal de la web -->
 
-    <!-- Texto principal del header -->
+    <!-- Bloque de texto del header -->
     <div class="header-text">
-        <h1>AOS Corporation</h1>
+        <h1>AOS Corporation</h1> <!-- Título principal -->
         <p>
             Corporación tecnológica y automotriz especializada en desarrollo tecnológico,
             reparaciones de equipos tecnológicos y automotrices y soluciones avanzadas.
-        </p>
+        </p> <!-- Descripción breve de la empresa -->
     </div>
 
-    <!-- Logo -->
+    <!-- Bloque del logo -->
     <div class="header-image">
-        <img src="images/logo.png" alt="Logo AOS">
+        <img src="images/logo.png" alt="Logo AOS"> <!-- Logo con texto alternativo -->
     </div>
 
 </header>
 
 <!-- ================= CONTENIDO PRINCIPAL ================= -->
-<main class="main-content">
+<main class="main-content"> <!-- Contenedor de todo el contenido principal -->
 
-<!-- ========== AOS MECA (RESTAURADO) ========== -->
-<section class="section aos-meca">
-    <h2>AOS Meca</h2>
+    <!-- ========== AOS MECA (RESTAURADO) ========== -->
+    <section class="section aos-meca"> <!-- Sección mecánica -->
+        <h2>AOS Meca</h2> <!-- Título de sección -->
 
-    <div class="block">
-        <strong>Servicios mecánicos avanzados</strong>
-        <p>Mantenimiento, reparaciones y repros.</p>
-    </div>
+        <!-- Cada bloque es clicable si es necesario, usa clase .block -->
+        <div class="block">
+            <strong>Servicios mecánicos avanzados</strong>
+            <p>Mantenimiento, reparaciones y repros.</p>
+        </div>
 
-    <div class="block">
-        <strong>Automoción y alto rendimiento</strong>
-        <p>Preparaciones y diagnósticos profesionales.</p>
-    </div>
+        <div class="block">
+            <strong>Automoción y alto rendimiento</strong>
+            <p>Preparaciones y diagnósticos profesionales.</p>
+        </div>
 
-    <div class="block">
-        <strong>Consultoría técnica</strong>
-        <p>Asesoramiento técnico especializado.</p>
-    </div>
-</section>
+        <div class="block">
+            <strong>Consultoría técnica</strong>
+            <p>Asesoramiento técnico especializado.</p>
+        </div>
+    </section>
 
-<!-- ========== AOS TECHS ========== -->
-<section class="section aos-techs">
-    <h2>AOS Techs</h2>
+    <!-- ========== AOS TECHS ========== -->
+    <section class="section aos-techs"> <!-- Sección tecnológica -->
+        <h2>AOS Techs</h2>
 
-    <!-- BLOQUE DESTACADO -->
-    <div class="block featured">
-        <a href="craking-by-aos.html">
-            <h3>craking by aos</h3>
-            <p>
-                Todo sobre hacking ético, análisis de seguridad,
-                recursos técnicos y formación proporcionados por AOS Corporation.
-            </p>
-        </a>
-    </div>
+        <!-- BLOQUE DESTACADO: Craking By AOS -->
+        <div class="block featured">
+            <!-- Todo el bloque es clicable porque el link envuelve todo -->
+            <a href="craking-by-aos.html">
+                <h3>craking by aos</h3> <!-- Título en minúsculas -->
+                <p>
+                    Todo sobre hacking ético, análisis de seguridad,
+                    recursos técnicos y formación proporcionados por AOS Corporation.
+                </p>
+            </a>
+        </div>
 
-    <div class="block">
-        <a href="#">
-            <h3>Desarrollo tecnológico y web</h3>
-            <p>Diseño y desarrollo de soluciones digitales.</p>
-        </a>
-    </div>
+        <!-- Bloques normales con click en todo el bloque -->
+        <div class="block">
+            <a href="#">
+                <h3>Desarrollo tecnológico y web</h3>
+                <p>Diseño y desarrollo de soluciones digitales.</p>
+            </a>
+        </div>
 
-    <div class="block">
-        <a href="#">
-            <h3>Venta de software y hardware</h3>
-            <p>Distribución de tecnología profesional.</p>
-        </a>
-    </div>
+        <div class="block">
+            <a href="#">
+                <h3>Venta de software y hardware</h3>
+                <p>Distribución de tecnología profesional.</p>
+            </a>
+        </div>
 
-    <div class="block">
-        <a href="reparacion-equipos.html">
-            <h3>Reparación de equipos</h3>
-            <p>Móviles, ordenadores y dispositivos electrónicos.</p>
-        </a>
-    </div>
+        <div class="block">
+            <a href="reparacion-equipos.html">
+                <h3>Reparación de equipos</h3>
+                <p>Móviles, ordenadores y dispositivos electrónicos.</p>
+            </a>
+        </div>
 
-    <div class="block">
-        <a href="#">
-            <h3>Asesoría tecnológica</h3>
-            <p>Consultoría para particulares y empresas.</p>
-        </a>
-    </div>
+        <div class="block">
+            <a href="#">
+                <h3>Asesoría tecnológica</h3>
+                <p>Consultoría para particulares y empresas.</p>
+            </a>
+        </div>
 
-</section>
+    </section>
 
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>📧 contacto@aoscorp.com | 📞 +34 632 18 00 91</p>
+<footer class="footer"> <!-- Pie de página -->
+    <p>📧 contacto@aoscorp.com | 📞 +34 632 18 00 91</p> <!-- Información de contacto -->
 
+    <!-- Redes sociales -->
     <div class="socials">
         <a href="#">Instagram</a>
         <a href="#">Discord</a>
@@ -114,4 +119,4 @@
 </footer>
 
 </body>
-</html>
+</html> <!-- Cierre correcto del documento -->
