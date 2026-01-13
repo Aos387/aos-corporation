@@ -1,10 +1,10 @@
 /* =========================
-   RESET GLOBAL
+   RESET
 ========================= */
 * {
     margin: 0; /* Elimina márgenes por defecto */
     padding: 0; /* Elimina rellenos por defecto */
-    box-sizing: border-box; /* Incluye bordes y padding en el tamaño total */
+    box-sizing: border-box; /* Incluye borde en width/height */
     font-family: Arial, Helvetica, sans-serif; /* Fuente global */
 }
 
@@ -13,23 +13,22 @@
 ========================= */
 body {
     background-color: #0e0e0e; /* Fondo oscuro */
-    color: #ffffff; /* Texto blanco por defecto */
-    line-height: 1.5; /* Mejor lectura */
+    color: #ffffff; /* Texto por defecto blanco */
 }
 
 /* =========================
    HEADER
 ========================= */
 .header {
-    display: flex; /* Elementos en fila */
-    justify-content: space-between; /* Separación horizontal */
-    align-items: center; /* Alineación vertical */
+    display: flex; /* Coloca los elementos en fila */
+    justify-content: space-between; /* Separa el texto y logo */
+    align-items: center; /* Centrado vertical */
     padding: 50px;
-    background-color: #111; /* Fondo cabecera */
+    background-color: #111; /* Fondo del header */
 }
 
 .header-text {
-    max-width: 60%; /* Limita ancho del texto */
+    max-width: 60%; /* Ancho máximo para no sobrepasar el logo */
 }
 
 .header-text h1 {
@@ -40,85 +39,109 @@ body {
 .header-text p {
     font-size: 18px;
     color: #cccccc;
+    line-height: 1.5;
 }
 
 .header-image img {
-    width: 200px; /* Logo */
+    width: 200px; /* Tamaño del logo */
 }
 
 /* =========================
    MAIN CONTENT
 ========================= */
 .main-content {
-    display: flex;
-    flex-direction: column; /* Ahora las secciones apilan en vertical para móvil y PC */
-    gap: 40px;
-    padding: 40px; /* Espacio interior */
+    display: flex; /* Flex para colocar los dos bloques grandes */
+    flex-wrap: wrap; /* Permite que los bloques bajen en móvil */
+    justify-content: space-between;
+    gap: 40px; /* Separación entre bloques grandes */
+    padding: 60px;
 }
 
 /* =========================
-   SECCIONES GENERALES
+   SECTIONS
 ========================= */
 .section {
+    width: 48%; /* Dos bloques grandes lado a lado */
+    padding: 35px;
     border-radius: 16px;
-    padding: 30px;
-    background-color: #151515; /* Fondo de sección */
-    transition: all 0.35s ease; /* Transiciones suaves */
+    background-color: #151515;
+    transition: all 0.35s ease; /* Animación suave */
 }
 
-/* Título de cada sección */
 .section h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* =========================
-   BLOQUES (TARJETAS) UNIFICADOS
-========================= */
-.block {
-    background-color: #1a1a1a; /* Fondo inicial */
-    border: 1px solid #222; /* Borde suave */
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 20px;
-    transition: background 0.3s ease, color 0.3s ease; /* Solo color y fondo en hover */
-    cursor: pointer; /* Mano al pasar ratón */
-}
-
-/* Si hay link dentro del bloque, ocupa todo el bloque */
-.block a {
-    display: block;
-    color: inherit; /* Hereda color del bloque */
-    text-decoration: none; /* Sin subrayado */
-}
-
-/* Hover para todos los bloques */
+/* Hover en secciones grandes */
 @media (hover: hover) and (pointer: fine) {
-    .block:hover {
-        background-color: #ffffff; /* Fondo claro al pasar ratón */
-    }
-    .block:hover strong,
-    .block:hover p,
-    .block:hover a {
-        color: #000000; /* Texto negro al pasar ratón */
+    .section:hover {
+        transform: translateY(-4px); /* Levanta un poco la sección */
     }
 }
 
 /* =========================
-   BLOQUE DESTACADO (AOS TECHS)
+   BLOQUES INTERNOS
 ========================= */
-.featured {
-    border: 1px solid #00aaff; /* Borde azul */
-    background: linear-gradient(
-        145deg,
-        rgba(0,170,255,0.08),
-        rgba(0,170,255,0.02)
-    ); /* Fondo con degradado sutil */
+.section-block {
+    margin-bottom: 22px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #1a1a1a; /* Fondo más oscuro para bloques internos */
+    transition: all 0.3s ease;
 }
 
-.featured a h3 {
-    font-size: 19px;
-    letter-spacing: 1px;
+/* Hover en bloques individuales */
+.section-block:hover {
+    background-color: #ffffff; /* Fondo blanco al pasar ratón */
+}
+
+.section-block a {
+    text-decoration: none;
+    color: inherit; /* Hereda color del bloque */
+    display: block; /* Todo el bloque clicable */
+    height: 100%; /* Ocupa todo el bloque */
+}
+
+.section-block h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.section-block p {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Hover en texto dentro de bloque */
+.section-block:hover h3,
+.section-block:hover p {
+    color: #000000; /* Texto negro sobre fondo blanco */
+}
+
+/* =========================
+   BLOQUE DESTACADO
+========================= */
+.featured-tech h3 {
+    font-size: 21px; /* Más grande que los otros bloques */
+}
+
+.featured-tech {
+    border: 1px solid #ffffff; /* Borde blanco sutil */
+}
+
+/* =========================
+   AOS MECA
+========================= */
+.aos-meca {
+    background-color: #1a1a1a; /* Fondo oscuro */
+}
+
+/* =========================
+   AOS TECHS
+========================= */
+.aos-techs {
+    background-color: #151515;
 }
 
 /* =========================
@@ -132,12 +155,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .footer p {
     color: #cccccc;
     margin-bottom: 20px;
-    text-align: center;
 }
 
 /* =========================
@@ -145,8 +168,6 @@ body {
 ========================= */
 .socials {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 25px;
     flex-wrap: wrap;
 }
@@ -155,6 +176,7 @@ body {
     color: #00aaff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .socials a:hover {
@@ -164,23 +186,13 @@ body {
 /* =========================
    RESPONSIVE (MÓVIL)
 ========================= */
-@media (max-width: 900px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .header-text {
-        max-width: 100%;
-    }
-
+@media screen and (max-width: 900px) {
     .main-content {
-        padding: 20px;
-        gap: 25px;
+        flex-direction: column; /* Bloques grandes apilados */
+        gap: 30px;
     }
 
     .section {
-        padding: 20px;
+        width: 100%; /* Cada bloque ocupa todo el ancho */
     }
 }
