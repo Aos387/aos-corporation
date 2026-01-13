@@ -1,111 +1,155 @@
-<!DOCTYPE html> <!-- Declara que usamos HTML5 -->
-<html lang="es"> <!-- Idioma principal: español -->
+/* ===================================
+   RESET GLOBAL
+=================================== */
+* {
+    margin: 0; /* Elimina márgenes predefinidos */
+    padding: 0; /* Elimina rellenos */
+    box-sizing: border-box; /* Ajusta ancho de borde en cálculo de tamaño */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente global */
+}
 
-<head>
-    <meta charset="UTF-8"> <!-- Soporte de acentos, ñ y caracteres especiales -->
-    <title>AOS Corporation</title> <!-- Título en la pestaña del navegador -->
-    <link rel="stylesheet" href="style.css"> <!-- Conecta con el CSS principal -->
-</head>
+/* ===================================
+   BODY GENERAL
+=================================== */
+body {
+    background-color: #0e0e0e; /* Fondo oscuro */
+    color: #ffffff; /* Texto por defecto blanco */
+    line-height: 1.5; /* Mejora lectura de párrafos */
+}
 
-<body> <!-- Todo lo visible va aquí -->
+/* ===================================
+   HEADER
+=================================== */
+.header {
+    display: flex; /* Pone texto y logo en fila */
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #111;
+}
 
-<!-- ================= HEADER ================= -->
-<header class="header"> <!-- Cabecera principal -->
-    <div class="header-text"> <!-- Bloque de texto -->
-        <h1>AOS Corporation</h1> <!-- Título principal -->
-        <p>
-            Corporación tecnológica y automotriz especializada en desarrollo tecnológico,
-            reparaciones de equipos tecnológicos y automotrices y soluciones avanzadas.
-        </p>
-    </div>
+.header-text {
+    max-width: 60%; /* Limita ancho del texto */
+}
 
-    <div class="header-image"> <!-- Logo -->
-        <img src="images/logo.png" alt="Logo AOS">
-    </div>
-</header>
+.header-text h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
 
-<!-- ================= CONTENIDO PRINCIPAL ================= -->
-<main class="main-content"> <!-- Contenedor principal -->
+.header-text p {
+    font-size: 18px;
+    opacity: .85;
+}
 
-    <!-- ========== AOS MECA (Bloque grande restaurado) ========== -->
-    <section class="section aos-meca"> <!-- Sección mecánica -->
-        <h2>AOS Meca</h2> <!-- Título -->
+/* ===================================
+   MAIN CONTENT
+=================================== */
+.main-content {
+    display: flex; /* Coloca secciones una al lado de la otra */
+    gap: 30px; /* Separación entre secciones */
+    padding: 50px;
+    flex-wrap: wrap; /* Para que baje en móvil */
+}
 
-        <!-- Bloques dentro de Meca -->
-        <div class="section-block">
-            <strong>Servicios mecánicos avanzados</strong>
-            <p>Mantenimiento, reparaciones y repros.</p>
-        </div>
+/* ===================================
+   SECTIONS (dos bloques grandes)
+=================================== */
+.section {
+    width: 48%; /* Dos columnas cuando hay espacio */
+    padding: 30px;
+    background-color: #151515;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
 
-        <div class="section-block">
-            <strong>Automoción y alto rendimiento</strong>
-            <p>Preparaciones y diagnósticos profesionales.</p>
-        </div>
+/* ===================================
+   HOVER EN SECCIONES (efecto suave)
+=================================== */
+@media (hover: hover) and (pointer: fine) {
+    .section:hover {
+        transform: translateY(-5px); /* Se eleva ligeramente */
+    }
+}
 
-        <div class="section-block">
-            <strong>Consultoría técnica</strong>
-            <p>Asesoramiento técnico especializado.</p>
-        </div>
-    </section>
+/* ===================================
+   BLOQUES INTERNOS EN CADA SECCION
+=================================== */
+.section-block {
+    background-color: #1a1a1a; /* Fondo oscuro para los bloques */
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-    <!-- ========== AOS TECHS (Bloque grande restaurado) ========== -->
-    <section class="section aos-techs"> <!-- Sección tecnológica -->
-        <h2>AOS Techs</h2>
+/* Todo el bloque clicable si tiene enlace */
+.section-block a {
+    display: block; /* Hace clicable toda la caja */
+    text-decoration: none;
+    color: inherit;
+}
 
-        <!-- BLOQUE DESTACADO: Craking By AOS -->
-        <div class="section-block featured-tech">
-            <a href="craking-by-aos.html">
-                <h3>craking by aos</h3> <!-- Título ligeramente más grande -->
-                <p>
-                    Todo sobre hacking ético, análisis de seguridad,
-                    recursos técnicos y formación proporcionados por AOS Corporation.
-                </p>
-            </a>
-        </div>
+/* Hover en bloque */
+@media (hover: hover) and (pointer: fine) {
+    .section-block:hover {
+        background-color: #ffffff;
+    }
+    .section-block:hover h3,
+    .section-block:hover p {
+        color: #000000; /* Texto negro para legibilidad */
+    }
+}
 
-        <!-- Bloques normales debajo del destacado -->
-        <div class="section-block">
-            <a href="#">
-                <h3>Desarrollo tecnológico y web</h3>
-                <p>Diseño y desarrollo de soluciones digitales.</p>
-            </a>
-        </div>
+/* Título dentro de bloque */
+.section-block h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
 
-        <div class="section-block">
-            <a href="#">
-                <h3>Venta de software y hardware</h3>
-                <p>Distribución de tecnología profesional.</p>
-            </a>
-        </div>
+/* ===================================
+   BLOQUE DESTACADO
+=================================== */
+.featured-tech {
+    border: 1px solid #ffffff; /* Borde blanco sutil */
+}
 
-        <div class="section-block">
-            <a href="reparacion-equipos.html">
-                <h3>Reparación de equipos</h3>
-                <p>Móviles, ordenadores y dispositivos electrónicos.</p>
-            </a>
-        </div>
+.featured-tech h3 {
+    font-size: 20px; /* Más grande que otros bloques */
+}
 
-        <div class="section-block">
-            <a href="#">
-                <h3>Asesoría tecnológica</h3>
-                <p>Consultoría para particulares y empresas.</p>
-            </a>
-        </div>
+/* ===================================
+   FOOTER
+=================================== */
+.footer {
+    text-align: center;
+    background-color: #111;
+    padding: 30px 0;
+}
 
-    </section>
+.footer p {
+    opacity: .85;
+}
 
-</main>
+.footer .socials a {
+    margin: 0 12px;
+    color: #00aaff;
+    text-decoration: none;
+}
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>📧 contacto@aoscorp.com | 📞 +34 632 18 00 91</p>
+.footer .socials a:hover {
+    color: #ffffff;
+}
 
-    <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Discord</a>
-        <a href="#">GitHub</a>
-    </div>
-</footer>
-
-</body>
-</html>
+/* ===================================
+   RESPONSIVE (MÓVIL)
+=================================== */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .section {
+        width: 100%; /* Ocupa todo el ancho en movil */
+    }
+}
