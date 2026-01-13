@@ -1,4 +1,4 @@
-/* ================= RESET GLOBAL ================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,44 +6,29 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================= BODY ================= */
 body {
     background-color: #0e0e0e;
     color: #ffffff;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 40px;
     position: relative;
 }
 
 .header-text h1 {
     font-size: 48px;
-    margin-bottom: 12px;
-}
-
-.header-text p {
-    font-size: 18px;
-    opacity: 0.85;
-}
-
-/* ================= LOGO ================= */
-.header-image {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    margin-bottom: 10px;
 }
 
 .header-image img {
     width: 90px;
-    height: auto;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* MAIN */
 .main-content {
     display: flex;
     gap: 35px;
@@ -51,7 +36,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* ================= SECTIONS ================= */
 .section {
     width: 48%;
     background-color: #151515;
@@ -60,70 +44,47 @@ body {
 }
 
 .section h2 {
-    font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* ================= BLOQUES ================= */
+/* BLOQUES */
 .section-block {
     background-color: #1a1a1a;
     padding: 18px;
     border-radius: 10px;
     margin-bottom: 18px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hacer todo el bloque clicable */
 .section-block a {
     display: block;
     text-decoration: none;
     color: inherit;
 }
 
-/* ================= HOVER / ACTIVE (SOLUCIÓN CLAVE) ================= */
-@media (hover: hover) and (pointer: fine) {
-    .section-block:hover {
-        background-color: #ffffff;
-    }
-
-    /* 🔥 FORZAMOS TODO A NEGRO */
-    .section-block:hover *,
-    .section-block:hover h3,
-    .section-block:hover p,
-    .section-block:hover strong {
-        color: #000000 !important;
-    }
-}
-
-/* 📱 Soporte móvil (tap) */
-.section-block:active,
-.section-block:focus-within {
+/* HOVER CORRECTO */
+.section-block:hover {
     background-color: #ffffff;
 }
 
-.section-block:active *,
-.section-block:focus-within * {
-    color: #000000 !important;
+.section-block:hover * {
+    color: #000000;
 }
 
-/* ================= DESTACADO CRAKING ================= */
+/* DESTACADO */
 .featured-tech {
     border: 1px solid #ffffff;
 }
 
-.featured-tech h3 {
-    font-size: 20px;
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 .footer {
-    text-align: center;
     background-color: #111;
-    padding: 32px 0;
+    text-align: center;
+    padding: 30px;
 }
 
 .footer .socials a {
-    margin: 0 12px;
+    margin: 0 10px;
     color: #00aaff;
     text-decoration: none;
 }
@@ -132,22 +93,13 @@ body {
     color: #ffffff;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .main-content {
         flex-direction: column;
-        padding: 30px;
     }
 
     .section {
         width: 100%;
-    }
-
-    .header {
-        padding: 30px;
-    }
-
-    .header-image img {
-        width: 70px;
     }
 }
