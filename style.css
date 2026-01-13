@@ -1,6 +1,7 @@
 /* ================= RESET GLOBAL ================= */
 * {
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -17,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    position: relative; /* Para que el logo no colapse */
+    position: relative;
 }
 
 .header-text h1 {
@@ -32,13 +33,13 @@ body {
 
 /* ================= LOGO ================= */
 .header-image {
-    position: absolute; /* Posiciona encima sin romper layout */
+    position: absolute;
     top: 20px;
     right: 20px;
 }
 
 .header-image img {
-    width: 90px; /* Tamaño controlado */
+    width: 90px;
     height: auto;
 }
 
@@ -53,12 +54,11 @@ body {
 /* ================= SECTIONS ================= */
 .section {
     width: 48%;
-    background: #151515;
+    background-color: #151515;
     border-radius: 14px;
     padding: 28px;
 }
 
-/* Título de secciones */
 .section h2 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -66,32 +66,47 @@ body {
 
 /* ================= BLOQUES ================= */
 .section-block {
-    background: #1a1a1a;
+    background-color: #1a1a1a;
     padding: 18px;
     border-radius: 10px;
     margin-bottom: 18px;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Todo el bloque clicable */
+/* Hacer todo el bloque clicable */
 .section-block a {
     display: block;
     text-decoration: none;
     color: inherit;
 }
 
-/* Hover global en bloques */
+/* ================= HOVER / ACTIVE (SOLUCIÓN CLAVE) ================= */
 @media (hover: hover) and (pointer: fine) {
     .section-block:hover {
         background-color: #ffffff;
     }
+
+    /* 🔥 FORZAMOS TODO A NEGRO */
+    .section-block:hover *,
     .section-block:hover h3,
-    .section-block:hover p {
-        color: #000000;
+    .section-block:hover p,
+    .section-block:hover strong {
+        color: #000000 !important;
     }
 }
 
-/* Destacado de Craking */
+/* 📱 Soporte móvil (tap) */
+.section-block:active,
+.section-block:focus-within {
+    background-color: #ffffff;
+}
+
+.section-block:active *,
+.section-block:focus-within * {
+    color: #000000 !important;
+}
+
+/* ================= DESTACADO CRAKING ================= */
 .featured-tech {
     border: 1px solid #ffffff;
 }
@@ -103,13 +118,14 @@ body {
 /* ================= FOOTER ================= */
 .footer {
     text-align: center;
-    background: #111;
+    background-color: #111;
     padding: 32px 0;
 }
 
 .footer .socials a {
     margin: 0 12px;
     color: #00aaff;
+    text-decoration: none;
 }
 
 .footer .socials a:hover {
@@ -120,8 +136,18 @@ body {
 @media (max-width: 900px) {
     .main-content {
         flex-direction: column;
+        padding: 30px;
     }
+
     .section {
         width: 100%;
+    }
+
+    .header {
+        padding: 30px;
+    }
+
+    .header-image img {
+        width: 70px;
     }
 }
