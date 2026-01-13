@@ -153,3 +153,28 @@ body {
         width: 100%; /* Ocupa todo el ancho en movil */
     }
 }
+/* ================= LOGO HEADER FIX ================= */
+
+/* Contenedor del logo */
+.header-image {
+    position: absolute;          /* Lo sacamos del flujo normal */
+    top: 20px;                   /* Separación desde arriba */
+    right: 20px;                 /* Separación desde la derecha */
+    width: auto;
+    height: auto;
+}
+
+/* Imagen del logo */
+.header-image img {
+    width: 90px;                 /* 🔴 TAMAÑO CONTROLADO */
+    max-width: 100%;
+    height: auto;                /* Mantiene proporción */
+    display: block;
+}
+
+/* En móvil lo hacemos aún más pequeño */
+@media (max-width: 768px) {
+    .header-image img {
+        width: 65px;
+    }
+}
