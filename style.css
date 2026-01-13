@@ -1,180 +1,127 @@
-/* ===================================
-   RESET GLOBAL
-=================================== */
+/* ================= RESET GLOBAL ================= */
 * {
-    margin: 0; /* Elimina márgenes predefinidos */
-    padding: 0; /* Elimina rellenos */
-    box-sizing: border-box; /* Ajusta ancho de borde en cálculo de tamaño */
-    font-family: Arial, Helvetica, sans-serif; /* Fuente global */
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===================================
-   BODY GENERAL
-=================================== */
+/* ================= BODY ================= */
 body {
-    background-color: #0e0e0e; /* Fondo oscuro */
-    color: #ffffff; /* Texto por defecto blanco */
-    line-height: 1.5; /* Mejora lectura de párrafos */
+    background-color: #0e0e0e;
+    color: #ffffff;
 }
 
-/* ===================================
-   HEADER
-=================================== */
+/* ================= HEADER ================= */
 .header {
-    display: flex; /* Pone texto y logo en fila */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    background-color: #111;
-}
-
-.header-text {
-    max-width: 60%; /* Limita ancho del texto */
+    position: relative; /* Para que el logo no colapse */
 }
 
 .header-text h1 {
     font-size: 48px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .header-text p {
     font-size: 18px;
-    opacity: .85;
+    opacity: 0.85;
 }
 
-/* ===================================
-   MAIN CONTENT
-=================================== */
+/* ================= LOGO ================= */
+.header-image {
+    position: absolute; /* Posiciona encima sin romper layout */
+    top: 20px;
+    right: 20px;
+}
+
+.header-image img {
+    width: 90px; /* Tamaño controlado */
+    height: auto;
+}
+
+/* ================= MAIN CONTENT ================= */
 .main-content {
-    display: flex; /* Coloca secciones una al lado de la otra */
-    gap: 30px; /* Separación entre secciones */
-    padding: 50px;
-    flex-wrap: wrap; /* Para que baje en móvil */
+    display: flex;
+    gap: 35px;
+    padding: 55px;
+    flex-wrap: wrap;
 }
 
-/* ===================================
-   SECTIONS (dos bloques grandes)
-=================================== */
+/* ================= SECTIONS ================= */
 .section {
-    width: 48%; /* Dos columnas cuando hay espacio */
-    padding: 30px;
-    background-color: #151515;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
+    width: 48%;
+    background: #151515;
+    border-radius: 14px;
+    padding: 28px;
 }
 
-/* ===================================
-   HOVER EN SECCIONES (efecto suave)
-=================================== */
-@media (hover: hover) and (pointer: fine) {
-    .section:hover {
-        transform: translateY(-5px); /* Se eleva ligeramente */
-    }
+/* Título de secciones */
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-/* ===================================
-   BLOQUES INTERNOS EN CADA SECCION
-=================================== */
+/* ================= BLOQUES ================= */
 .section-block {
-    background-color: #1a1a1a; /* Fondo oscuro para los bloques */
+    background: #1a1a1a;
     padding: 18px;
-    border-radius: 12px;
+    border-radius: 10px;
     margin-bottom: 18px;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Todo el bloque clicable si tiene enlace */
+/* Todo el bloque clicable */
 .section-block a {
-    display: block; /* Hace clicable toda la caja */
+    display: block;
     text-decoration: none;
     color: inherit;
 }
 
-/* Hover en bloque */
+/* Hover global en bloques */
 @media (hover: hover) and (pointer: fine) {
     .section-block:hover {
         background-color: #ffffff;
     }
     .section-block:hover h3,
     .section-block:hover p {
-        color: #000000; /* Texto negro para legibilidad */
+        color: #000000;
     }
 }
 
-/* Título dentro de bloque */
-.section-block h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
-}
-
-/* ===================================
-   BLOQUE DESTACADO
-=================================== */
+/* Destacado de Craking */
 .featured-tech {
-    border: 1px solid #ffffff; /* Borde blanco sutil */
+    border: 1px solid #ffffff;
 }
 
 .featured-tech h3 {
-    font-size: 20px; /* Más grande que otros bloques */
+    font-size: 20px;
 }
 
-/* ===================================
-   FOOTER
-=================================== */
+/* ================= FOOTER ================= */
 .footer {
     text-align: center;
-    background-color: #111;
-    padding: 30px 0;
-}
-
-.footer p {
-    opacity: .85;
+    background: #111;
+    padding: 32px 0;
 }
 
 .footer .socials a {
     margin: 0 12px;
     color: #00aaff;
-    text-decoration: none;
 }
 
 .footer .socials a:hover {
     color: #ffffff;
 }
 
-/* ===================================
-   RESPONSIVE (MÓVIL)
-=================================== */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
     .main-content {
         flex-direction: column;
-        gap: 20px;
     }
     .section {
-        width: 100%; /* Ocupa todo el ancho en movil */
-    }
-}
-/* ================= LOGO HEADER FIX ================= */
-
-/* Contenedor del logo */
-.header-image {
-    position: absolute;          /* Lo sacamos del flujo normal */
-    top: 20px;                   /* Separación desde arriba */
-    right: 20px;                 /* Separación desde la derecha */
-    width: auto;
-    height: auto;
-}
-
-/* Imagen del logo */
-.header-image img {
-    width: 90px;                 /* 🔴 TAMAÑO CONTROLADO */
-    max-width: 100%;
-    height: auto;                /* Mantiene proporción */
-    display: block;
-}
-
-/* En móvil lo hacemos aún más pequeño */
-@media (max-width: 768px) {
-    .header-image img {
-        width: 65px;
+        width: 100%;
     }
 }
