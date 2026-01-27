@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Consolas, monospace;
 }
 
 body {
@@ -16,7 +16,6 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    position: relative;
 }
 
 .header-text h1 {
@@ -48,27 +47,31 @@ body {
 }
 
 /* BLOQUES */
-.section-block {
+.section-block,
+.block {
     background-color: #1a1a1a;
     padding: 18px;
     border-radius: 10px;
     margin-bottom: 18px;
-    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.section-block a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* HOVER CORRECTO */
-.section-block:hover {
+.section-block:hover,
+.block:hover {
     background-color: #ffffff;
 }
 
-.section-block:hover * {
+.section-block:hover *,
+.block:hover * {
     color: #000000;
+}
+
+.section-block a,
+.block a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 /* DESTACADO */
