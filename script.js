@@ -1,35 +1,40 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&<>";
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&<>";
 
-document.querySelectorAll("[data-hack]").forEach(el => {
-    const originalText = el.innerText;
+document.querySelectorAll(".hack-text").forEach(element => {
+
+    const original = element.textContent;
+    const speed = parseInt(element.dataset.speed) || 30;
+
     let interval = null;
 
-    el.addEventListener("mouseenter", () => {
-        let iteration = 0;
+    element.parentElement.addEventListener("mouseenter", () => {
 
+        let iteration = 0;
         clearInterval(interval);
 
         interval = setInterval(() => {
-            el.innerText = originalText
+
+            element.textContent = original
                 .split("")
                 .map((char, index) => {
-                    if (index < iteration) {
-                        return originalText[index];
-                    }
-                    return letters[Math.floor(Math.random() * letters.length)];
+                    if (index < iteration) return original[index];
+                    return chars[Math.floor(Math.random() * chars.length)];
                 })
                 .join("");
 
-            if (iteration >= originalText.length) {
+            if (iteration >= original.length) {
                 clearInterval(interval);
             }
 
             iteration += 1 / 3;
-        }, 30);
+
+        }, speed);
+
     });
 
-    el.addEventListener("mouseleave", () => {
+    element.parentElement.addEventListener("mouseleave", () => {
         clearInterval(interval);
-        el.innerText = originalText;
+        element.textContent = original;
     });
+
 });
