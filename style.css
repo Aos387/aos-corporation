@@ -110,7 +110,15 @@ body {
     .main-content {
         flex-direction: column;
     }
+.hack-text {
+    display: inline-block;
+    transition: color 0.3s ease;
+}
 
+.section-block:hover .hack-text,
+.block:hover .hack-text {
+    color: #000000;
+}
     .section {
         width: 100%;
     }
